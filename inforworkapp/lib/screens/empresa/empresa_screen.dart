@@ -10,9 +10,6 @@ class EmpresaScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.file(../images/San_fernando.png),
-          ],
         ),
       ),
     );
