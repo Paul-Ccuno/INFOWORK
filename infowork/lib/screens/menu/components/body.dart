@@ -29,7 +29,7 @@ class Body extends StatelessWidget {
                   child: Align(
                     alignment: Alignment(0, -0.9),
                     child: Text(
-                      "Bienvenido",
+                      "Elige una de estas opciones",
                       style: TextStyle(
                         fontSize: 20,
                       ),
