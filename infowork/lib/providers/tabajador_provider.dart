@@ -13,7 +13,7 @@ class TrabajadorProvider {
       return "";
     } else {
       final trabajadorTemp = TrabajadorModel.fromJson(decodeData);
-      print(trabajadorTemp.nombre);
+      print(trabajadorTemp.apellido);
       return trabajadorTemp.nombre;
     }
   }
