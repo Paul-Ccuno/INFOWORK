@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'dart:ffi';
-
 TrabajadorModel trabajadorModelFromJson(String str) =>
     TrabajadorModel.fromJson(json.decode(str));
 
@@ -24,7 +22,7 @@ class TrabajadorModel {
   factory TrabajadorModel.fromJson(Map<String, dynamic> json) =>
       TrabajadorModel(
         nombre: json["nombre"],
-        apellido: json["apellido"],
+        apellido: json["Apellido"],
         edad: json["edad"],
         sueldo: json["sueldo"],
       );
