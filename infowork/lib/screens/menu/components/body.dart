@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:infowork/contrato/contrato_screen.dart';
+import 'package:infowork/salud/salud.dart';
+import 'package:infowork/screens/normas/normas_screen.dart';
+import 'package:infowork/screens/perfil/perfil_screen.dart';
+import 'package:infowork/sueldo/sueldo_screen.dart';
 
 import '../../../constans.dart';
 
@@ -44,112 +50,194 @@ class Body extends StatelessWidget {
                   //padding: EdgeInsets.all(12.0),
                   padding: EdgeInsetsDirectional.fromSTEB(12, 90, 12, 12),
                   children: <Widget>[
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                      elevation: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Image.asset(
-                            "assets/images/perfil.png",
-                            height: 128,
-                          ),
-                          Text(
-                            "Perfil",
-                            style: cardTextSyle,
-                          )
-                        ],
+                    InkWell(
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        elevation: 4,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              width: 128,
+                              height: 128,
+                              child: ClipRRect(
+                                child: SvgPicture.asset(
+                                  "assets/images/perfil3.svg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Perfil",
+                              style: cardTextSyle,
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                      elevation: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Image.asset(
-                            "assets/images/salario.png",
-                            height: 128,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PerfilScreen(),
                           ),
-                          Text(
-                            "Sueldo",
-                            style: cardTextSyle,
-                          )
-                        ],
+                        );
+                      },
+                    ),
+                    InkWell(
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        elevation: 4,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              width: 128,
+                              height: 128,
+                              child: ClipRRect(
+                                child: SvgPicture.asset(
+                                  "assets/images/sueldo3.svg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Sueldo",
+                              style: cardTextSyle,
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                      elevation: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Image.asset(
-                            "assets/images/contrato.png",
-                            height: 128,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SueldoScreen(),
                           ),
-                          Text(
-                            "Contrato",
-                            style: cardTextSyle,
-                          )
-                        ],
+                        );
+                      },
+                    ),
+                    InkWell(
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        elevation: 4,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              width: 128,
+                              height: 128,
+                              child: ClipRRect(
+                                child: SvgPicture.asset(
+                                  "assets/images/contract3.svg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Contrato",
+                              style: cardTextSyle,
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                      elevation: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Image.asset(
-                            "assets/images/salud.png",
-                            height: 128,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ContratoScreen(),
                           ),
-                          Text(
-                            "Salud",
-                            style: cardTextSyle,
-                          )
-                        ],
+                        );
+                      },
+                    ),
+                    InkWell(
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        elevation: 4,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              width: 128,
+                              height: 128,
+                              child: ClipRRect(
+                                child: SvgPicture.asset(
+                                  "assets/images/salud3.svg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Salud",
+                              style: cardTextSyle,
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                      elevation: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Image.asset(
-                            "assets/images/normas.png",
-                            height: 128,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SaludScreen(),
                           ),
-                          Text(
-                            "Normas",
-                            style: cardTextSyle,
-                          )
-                        ],
+                        );
+                      },
+                    ),
+                    InkWell(
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        elevation: 4,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              width: 128,
+                              height: 128,
+                              child: ClipRRect(
+                                child: SvgPicture.asset(
+                                  "assets/images/normas3.svg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Normas",
+                              style: cardTextSyle,
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                      elevation: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          new Image.asset(
-                            "assets/images/reglamento.png",
-                            height: 128,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => NormaScreen(),
                           ),
-                          Text(
-                            "Reglamento I.",
-                            style: cardTextSyle,
-                          )
-                        ],
+                        );
+                      },
+                    ),
+                    InkWell(
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        elevation: 4,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              width: 128,
+                              height: 128,
+                              child: ClipRRect(
+                                child: SvgPicture.asset(
+                                  "assets/images/reclamo3.svg",
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Reclamo",
+                              style: cardTextSyle,
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],

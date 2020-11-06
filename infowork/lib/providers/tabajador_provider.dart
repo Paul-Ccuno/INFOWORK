@@ -5,16 +5,15 @@ import 'package:http/http.dart' as http;
 
 class TrabajadorProvider {
   final String _url = 'https://infowork-7ce24.firebaseio.com';
-  Future<String> cargarTrabajador() async {
+  Future<TrabajadorModel> cargarTrabajador() async {
     final url = '$_url/Empresa/Movistar/Trabajador/joselipa123ochoa123.json';
     final resp = await http.get(url);
     final Map<String, dynamic> decodeData = json.decode(resp.body);
     if (decodeData == null) {
-      return "";
+      return null;
     } else {
       final trabajadorTemp = TrabajadorModel.fromJson(decodeData);
-      print(trabajadorTemp.apellido);
-      return trabajadorTemp.nombre;
+      return trabajadorTemp;
     }
   }
 }

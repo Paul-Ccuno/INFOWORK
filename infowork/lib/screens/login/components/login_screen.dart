@@ -41,8 +41,9 @@ class AuthenticationService {
     }
   }
 
-  Future<void> signOut() async {
+  Future<bool> signOut() async {
     await _firebaseAuth.signOut();
+    return true;
   }
 
   Future<String> signUp({String email, String password}) async {

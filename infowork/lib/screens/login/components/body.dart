@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infowork/components/rounded_button.dart';
 import 'package:infowork/components/text_field_container.dart';
+import 'package:infowork/providers/empresa_provider.dart';
 import 'package:infowork/screens/login/components/login_screen.dart';
 import 'package:infowork/screens/menu/components/menu_screen.dart';
 import 'package:provider/provider.dart';
 
 class Body extends StatelessWidget {
+  final empresaProvider = new EmpresaProvider();
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();

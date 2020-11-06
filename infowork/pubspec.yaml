@@ -35,6 +35,7 @@ dependencies:
   firebase_database: ^4.2.0
   http:
 dev_dependencies:
+  test:
   flutter_test:
     sdk: flutter
 

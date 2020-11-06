@@ -5,17 +5,18 @@ import 'package:http/http.dart' as http;
 
 class DetalleBPProvider {
   final String _url = 'https://infowork-7ce24.firebaseio.com';
-  Future<String> cargarDetalleBP() async {
+  Future<DetalleBpModel> cargarDetalleBP() async {
     final url =
-        '$_url/Empresa/Movistar/Trabajador/joselipa123ochoa123/boletapago/B0001/detalle.json';
+        '$_url/Empresa/Movistar/Trabajador/joselipa123ochoa123/boletapago/0/detalle.json';
     final resp = await http.get(url);
     final Map<String, dynamic> decodeData = json.decode(resp.body);
     if (decodeData == null) {
-      return "";
+      print("Asd");
+      return null;
     } else {
-      final detalleBPTemp = DetalleBPModel.fromJson(decodeData);
-      print(detalleBPTemp.monto);
-      return detalleBPTemp.bonificaciones.toString();
+      final detalleBPTemp = DetalleBpModel.fromJson(decodeData);
+      print(detalleBPTemp);
+      return detalleBPTemp;
     }
   }
 }
