@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+///Boton de login
+///text contenido
+///press funcion al momento de presionar
+///color color de boton
+///textcolor color de texto
 class RoundedButton extends StatelessWidget {
   final String text;
   final Function press;
@@ -20,12 +25,17 @@ class RoundedButton extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+          padding: EdgeInsets.symmetric(
+            vertical: 20,
+            horizontal: 40,
+          ),
           color: Colors.lightBlue[600],
           onPressed: press,
           child: Text(
             text,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Colors.white,
+            ),
           ),
         ),
       ),

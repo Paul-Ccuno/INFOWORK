@@ -1,11 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:infowork/model/detalle_bp.dart';
 import 'package:infowork/model/trabajador.dart';
-import 'package:infowork/model/empresa.dart';
-
-import 'package:infowork/providers/boleta_pago_provider.dart';
 import 'package:infowork/providers/empresa_provider.dart';
 import 'package:infowork/screens/login/components/login_screen.dart';
 import 'package:test/test.dart';

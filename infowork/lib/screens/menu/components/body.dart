@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:infowork/contrato/contrato_screen.dart';
-import 'package:infowork/salud/salud.dart';
-import 'package:infowork/screens/normas/normas_screen.dart';
-import 'package:infowork/screens/perfil/perfil_screen.dart';
-import 'package:infowork/sueldo/sueldo_screen.dart';
+import 'package:infowork/screens/contrato/components/contrato_screen.dart';
+import 'package:infowork/screens/salud/components/salud.dart';
+import 'package:infowork/screens/normas/components/normas_screen.dart';
+import 'package:infowork/screens/perfil/components/perfil_screen.dart';
+import 'package:infowork/screens/sueldo/components/sueldo_screen.dart';
 
 import '../../../constans.dart';
 
