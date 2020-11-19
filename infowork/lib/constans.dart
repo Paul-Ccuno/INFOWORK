@@ -14,3 +14,11 @@ const kDefaultShadow = BoxShadow(
   blurRadius: 27,
   color: Colors.black12,
 );
+
+const boxdecoration = BoxDecoration(
+  gradient: LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0xFF3362F3), Color(0XFF3967F2), Color(0xFF5079F3)],
+  ),
+);

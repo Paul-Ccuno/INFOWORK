@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:infowork/screens/login/components/login_screen.dart';
+import 'package:infowork/screens/usuario_empresa/components/usuario_empresa.dart';
+
+import 'constans.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -14,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Duration(milliseconds: 5000),
       () => Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => LoginScreen(),
+          builder: (context) => UsuarioEmpresa(),
         ),
       ),
     );
@@ -29,44 +31,57 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             children: <Widget>[
               Spacer(),
+              Container(
+                child: Text(
+                  "Bienvenido",
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                margin: EdgeInsets.symmetric(vertical: 20),
+              ),
               Center(
                 child: FractionallySizedBox(
                   widthFactor: .8,
                   child: SvgPicture.asset(
                     "assets/images/splash_log.svg",
-                    width: 400,
+                    width: 450,
                   ),
                 ),
+              ),
+              Text(
+                "INFOWORK",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
               ),
               Spacer(),
               CircularProgressIndicator(
                 backgroundColor: Colors.white,
               ),
               Spacer(),
-              Text(
-                "Bienvenido",
-                style: TextStyle(
-                  fontSize: 25.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+              Container(
+                child: Text(
+                  "Aplicacion para\nEmpresas y trabajadores",
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
+                margin: EdgeInsets.symmetric(vertical: 25),
               ),
             ],
           ),
         ),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.1, 0.4, 0.7, 0.9],
-            colors: [
-              Colors.lightBlue[800],
-              Colors.blue[600],
-              Colors.blue[700],
-              Colors.blue[800]
-            ],
-          ),
-        ),
+        decoration: boxdecoration,
       ),
     );
   }

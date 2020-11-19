@@ -8,6 +8,8 @@ import 'package:infowork/screens/login/components/login_screen.dart';
 import 'package:infowork/screens/menu/components/menu_screen.dart';
 import 'package:provider/provider.dart';
 
+import '../../../constans.dart';
+
 class Body extends StatelessWidget {
   final empresaProvider = new EmpresaProvider();
   @override
@@ -81,19 +83,7 @@ class Body extends StatelessWidget {
               ],
             ),
           ),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.1, 0.4, 0.7, 0.9],
-              colors: [
-                Colors.lightBlue[800],
-                Colors.blue[600],
-                Colors.blue[700],
-                Colors.blue[800]
-              ],
-            ),
-          ),
+          decoration: boxdecoration,
         ),
       );
     }
