@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:infowork/screens/menu/components/menu_screen.dart';
 
 class Slide {
   final String imageUrl;
@@ -79,21 +80,39 @@ class SlideDots extends StatelessWidget {
 final slideList = [
   Slide(
     imageUrl: 'assets/images/perfil.png',
-    title: 'A Cool Way to Get Start',
+    title: 'Opcion Perfil',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus tincidunt bibendum. Maecenas eu viverra orci. Duis diam leo, porta at justo vitae, euismod aliquam nulla.',
-  ),
-  Slide(
-    imageUrl: 'assets/images/positivo.png',
-    title: 'Design Interactive App UI',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus tincidunt bibendum. Maecenas eu viverra orci. Duis diam leo, porta at justo vitae, euismod aliquam nulla.',
+        'Ve tus datos como trabajador tales como nombre, apellido, edad y sueldo.',
   ),
   Slide(
     imageUrl: 'assets/images/salario.png',
-    title: 'It\'s Just the Beginning',
+    title: 'Opcion Sueldo',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus tincidunt bibendum. Maecenas eu viverra orci. Duis diam leo, porta at justo vitae, euismod aliquam nulla.',
+        'Informate de tu boleta de pago, teniendo en cuenta tus bonificaciones, descuento y el monto total.',
+  ),
+  Slide(
+    imageUrl: 'assets/images/contrato.png',
+    title: 'Opcion Contrato',
+    description:
+        'Informate sobre las clausulas y declaraciones en tu contrato.',
+  ),
+  Slide(
+    imageUrl: 'assets/images/salud.png',
+    title: 'Opcion Salud',
+    description:
+        'Informate de la seguridad y salud que te brinda la empresa para protegerte del riesgo de tu trabajo.',
+  ),
+  Slide(
+    imageUrl: 'assets/images/normass.png',
+    title: 'Opcion Normas',
+    description:
+        'Informate de las normas que tienes que seguir dentro de tu empresa.',
+  ),
+  Slide(
+    imageUrl: 'assets/images/reclamo.png',
+    title: 'Opcion Reclamo',
+    description:
+        'En caso de no estar de acuerdo con un descuento o que falte una bonificacion usar esta opcion para hacer llegar tus reclamos a tu empresa.',
   ),
 ];
 
@@ -110,7 +129,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
   void initState() {
     super.initState();
     Timer.periodic(Duration(seconds: 5), (Timer timer) {
-      if (_currentPage < 2) {
+      if (_currentPage < 5) {
         _currentPage++;
       } else {
         _currentPage = 0;
@@ -187,12 +206,47 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                        'Have an account?',
-                        style: TextStyle(
-                          fontSize: 18,
+                      Container(
+                        child: MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MenuScreen(),
+                              ),
+                            );
+                          },
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          shape: StadiumBorder(),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  'Volver  a menu',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                Icon(
+                                  Icons.keyboard_return,
+                                  color: Colors.white,
+                                )
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(80),
+                          gradient: LinearGradient(
+                            colors: [
+                              Color(0xFF3362F3),
+                              Color(0XFF3967F2),
+                              Color(0xFF5079F3)
+                            ],
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ],

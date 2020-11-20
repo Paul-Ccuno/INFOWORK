@@ -63,7 +63,7 @@ class Body extends StatelessWidget {
                               height: 128,
                               child: ClipRRect(
                                 child: SvgPicture.asset(
-                                  "assets/images/perfil3.svg",
+                                  "assets/images/perfil_menu.svg",
                                 ),
                               ),
                             ),
@@ -96,7 +96,7 @@ class Body extends StatelessWidget {
                               height: 128,
                               child: ClipRRect(
                                 child: SvgPicture.asset(
-                                  "assets/images/sueldo3.svg",
+                                  "assets/images/salario_menu.svg",
                                 ),
                               ),
                             ),
@@ -129,7 +129,7 @@ class Body extends StatelessWidget {
                               height: 128,
                               child: ClipRRect(
                                 child: SvgPicture.asset(
-                                  "assets/images/contract3.svg",
+                                  "assets/images/contrato_menu.svg",
                                 ),
                               ),
                             ),
@@ -162,7 +162,7 @@ class Body extends StatelessWidget {
                               height: 128,
                               child: ClipRRect(
                                 child: SvgPicture.asset(
-                                  "assets/images/salud3.svg",
+                                  "assets/images/salud_menu.svg",
                                 ),
                               ),
                             ),
@@ -195,7 +195,7 @@ class Body extends StatelessWidget {
                               height: 128,
                               child: ClipRRect(
                                 child: SvgPicture.asset(
-                                  "assets/images/normas3.svg",
+                                  "assets/images/normas_menu.svg",
                                 ),
                               ),
                             ),
@@ -228,7 +228,7 @@ class Body extends StatelessWidget {
                               height: 128,
                               child: ClipRRect(
                                 child: SvgPicture.asset(
-                                  "assets/images/reclamo3.svg",
+                                  "assets/images/reclamo_menu.svg",
                                 ),
                               ),
                             ),
