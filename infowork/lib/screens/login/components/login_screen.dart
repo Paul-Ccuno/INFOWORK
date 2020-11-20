@@ -18,10 +18,6 @@ class LoginScreen extends StatelessWidget {
       ],
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-        ),
         body: Body(),
       ),
     );

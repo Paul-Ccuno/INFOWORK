@@ -58,7 +58,7 @@ class UsuarioEmpresa extends StatelessWidget {
                     image: "assets/images/empresa.svg",
                     titulo: "Empresa",
                     descripcion:
-                        "Administra tus trabajadores\nAtiende sus reclamos\nInforma tus normas",
+                        "Gestiona tus trabajadores\nAtiende sus reclamos\nInforma tus normas",
                     destino: EmpresaRegisterLogin(),
                   ),
                   Text(
@@ -93,8 +93,60 @@ class OptionRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final optioncard = Container(
-      margin: const EdgeInsets.only(left: 46.0),
-      child: Material(
+      margin: const EdgeInsets.only(left: 46.0, right: 15.0),
+      child: MaterialButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => destino,
+            ),
+          );
+        },
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+        child: Text(
+          this.descripcion,
+          style: TextStyle(color: Colors.white),
+          textAlign: TextAlign.right,
+        ),
+        /*child: Container(
+          child: Text(
+            this.descripcion,
+            style: TextStyle(
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.end,
+          ),
+          /* Wrap(
+            children: <Widget>[
+              
+              Container(
+                child: Icon(Icons.navigate_next),
+                alignment: Alignment.centerRight,
+                width: 0,
+                height: 0,
+              )
+            ],
+          ),*/
+          color: Color(0xFF3362F3),
+        ),*/
+      ),
+      height: 130.5,
+      width: 350,
+      decoration: new BoxDecoration(
+        shape: BoxShape.rectangle,
+        color: Color(0xFF3362F3),
+        borderRadius: new BorderRadius.circular(8.0),
+        boxShadow: <BoxShadow>[
+          new BoxShadow(
+            color: Colors.black12,
+            offset: new Offset(0.0, 10.0),
+            blurRadius: 10.0,
+          )
+        ],
+      ),
+      /*child: Material(
         child: InkWell(
           onTap: () {
             Navigator.push(
@@ -134,7 +186,7 @@ class OptionRow extends StatelessWidget {
           )
         ],
       ),
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(10),*/
     );
     final planetImage = new Container(
       margin: new EdgeInsets.symmetric(vertical: 16.0),
@@ -146,11 +198,21 @@ class OptionRow extends StatelessWidget {
       ),
     );
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 2),
+      margin: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 2),
       child: new Stack(
         children: <Widget>[
           optioncard,
           planetImage,
+          Container(
+            child: Icon(
+              Icons.navigate_next,
+              size: 35,
+              color: Colors.white,
+            ),
+            alignment: Alignment.centerRight,
+            height: 130.5,
+            margin: const EdgeInsets.only(right: 25),
+          )
         ],
       ),
     );

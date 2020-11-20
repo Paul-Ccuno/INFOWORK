@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:infowork/screens/menu/components/menu_screen.dart';
-import 'package:infowork/screens/usuario_empresa/components/Register.dart';
 import 'package:infowork/screens/usuario_empresa/components/curvedwidget.dart';
 
 import '../../../constans.dart';
 
-class EmpresaRegisterLogin extends StatelessWidget {
+class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
       body: Container(
         height: double.infinity,
         decoration: BoxDecoration(
@@ -31,7 +33,7 @@ class EmpresaRegisterLogin extends StatelessWidget {
                   height: 300,
                   decoration: boxdecoration,
                   child: Text(
-                    "Login",
+                    "Register",
                     style: TextStyle(
                       fontSize: 35,
                       color: Colors.white,
@@ -77,9 +79,18 @@ class _LoginFormState extends State<LoginForm> {
           controller: _emailController,
           decoration: InputDecoration(
             icon: Icon(Icons.email),
-            labelText: "Email",
+            labelText: "Nombre de la empresa",
           ),
           keyboardType: TextInputType.emailAddress,
+          autovalidateMode: AutovalidateMode.always,
+        ),
+        TextFormField(
+          controller: _passwordController,
+          decoration: InputDecoration(
+            icon: Icon(Icons.lock),
+            labelText: "Correo Institucional",
+          ),
+          obscureText: true,
           autovalidateMode: AutovalidateMode.always,
         ),
         TextFormField(
@@ -90,46 +101,6 @@ class _LoginFormState extends State<LoginForm> {
           ),
           obscureText: true,
           autovalidateMode: AutovalidateMode.always,
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Container(
-          child: MaterialButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MenuScreen(),
-                ),
-              );
-            },
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            shape: StadiumBorder(),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    'Login',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Icon(
-                    Icons.navigate_next,
-                    color: Colors.white,
-                  )
-                ],
-              ),
-            ),
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(80),
-            gradient: LinearGradient(
-              colors: [Color(0xFF3362F3), Color(0XFF3967F2), Color(0xFF5079F3)],
-            ),
-          ),
-          width: 130,
         ),
         SizedBox(
           height: 10,
