@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:infowork/screens/menu/components/menu_screen.dart';
+import 'package:flutter_string_encryption/flutter_string_encryption.dart';
+import 'package:infowork/model/empresa.dart';
+import 'package:infowork/providers/empresa_provider.dart';
 import 'package:infowork/screens/usuario_empresa/components/Register.dart';
 import 'package:infowork/screens/usuario_empresa/components/curvedwidget.dart';
 
@@ -62,7 +64,9 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  final TextEditingController _emailController = TextEditingController();
+  EmpresaModel empresaModel = new EmpresaModel();
+  EmpresaProvider empresaProvider = new EmpresaProvider();
+  final TextEditingController _nombreEmpresa = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   void initState() {
@@ -74,13 +78,11 @@ class _LoginFormState extends State<LoginForm> {
     return Column(
       children: <Widget>[
         TextFormField(
-          controller: _emailController,
+          controller: _nombreEmpresa,
           decoration: InputDecoration(
             icon: Icon(Icons.email),
-            labelText: "Email",
+            labelText: "Nombre de la empresa",
           ),
-          keyboardType: TextInputType.emailAddress,
-          autovalidateMode: AutovalidateMode.always,
         ),
         TextFormField(
           controller: _passwordController,
@@ -96,13 +98,49 @@ class _LoginFormState extends State<LoginForm> {
         ),
         Container(
           child: MaterialButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MenuScreen(),
-                ),
-              );
+            onPressed: () async {
+              String nombre = _nombreEmpresa.text.trim();
+              String password = _passwordController.text.trim();
+              if (nombre != "" && password != "") {
+                empresaModel.nombre = nombre;
+                empresaProvider
+                    .cargarEmpresa(empresaModel.nombre)
+                    .then((value) async {
+                  if (value != null) {
+                    final cryptor = new PlatformStringCryptor();
+                    final salt = await cryptor.generateSalt();
+                    final key =
+                        "jIkj0VOLhFpOJSpI7SibjA==:RZ03+kGZ/9Di3PT0a3xUDibD6gmb2RIhTVF+mQfZqy0=";
+                    String decrypter =
+                        await cryptor.decrypt(value.password, key);
+                    if (password == decrypter) {
+                      Scaffold.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Logueado"),
+                        ),
+                      );
+                    } else {
+                      Scaffold.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Contraseña incorrecta"),
+                        ),
+                      );
+                    }
+                  } else {
+                    Scaffold.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Empresa no existe"),
+                      ),
+                    );
+                  }
+                });
+              } else {
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("Rellena todos los campos"),
+                  ),
+                );
+              }
             },
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
             shape: StadiumBorder(),

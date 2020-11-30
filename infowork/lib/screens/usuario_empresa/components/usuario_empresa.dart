@@ -11,10 +11,6 @@ class UsuarioEmpresa extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
       body: Container(
         height: double.infinity,
         decoration: BoxDecoration(

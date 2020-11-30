@@ -6,6 +6,10 @@ import 'package:infowork/providers/empresa_provider.dart';
 
 class SaludScreen extends StatelessWidget {
   final contratoProvider = new EmpresaProvider();
+  final String empresa;
+  final String usuario;
+
+  SaludScreen({Key key, this.empresa, this.usuario}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +45,7 @@ class SaludScreen extends StatelessWidget {
 
   Widget _obtenercontrato() {
     return FutureBuilder(
-      future: contratoProvider.cargarEmpresa(),
+      future: contratoProvider.cargarEmpresa(empresa),
       builder: (BuildContext context, AsyncSnapshot<EmpresaModel> snapshot) {
         if (snapshot.hasData) {
           var size = MediaQuery.of(context).size;

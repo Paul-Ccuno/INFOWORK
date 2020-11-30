@@ -6,7 +6,11 @@ import 'package:infowork/model/detalle_bp.dart';
 import 'package:infowork/providers/boleta_pago_provider.dart';
 
 class SueldoScreen extends StatelessWidget {
+  final String empresa;
+  final String usuario;
   final contratoProvider = new BoletaProvider();
+
+  SueldoScreen({Key key, this.empresa, this.usuario}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +20,7 @@ class SueldoScreen extends StatelessWidget {
 
   Widget _obtenercontrato() {
     return FutureBuilder(
-      future: contratoProvider.cargarBoleta(),
+      future: contratoProvider.cargarBoleta(empresa, usuario),
       builder: (BuildContext context, AsyncSnapshot<BoletadePago> snapshot) {
         if (snapshot.hasData) {
           var size = MediaQuery.of(context).size;

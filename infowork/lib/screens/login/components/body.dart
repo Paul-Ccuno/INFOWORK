@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:infowork/providers/empresa_provider.dart';
-import 'package:infowork/screens/login/components/login_screen.dart';
+import 'package:infowork/providers/tabajador_provider.dart';
 import 'package:infowork/screens/menu/components/menu_screen.dart';
 import 'package:infowork/screens/usuario_empresa/components/curvedwidget.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_string_encryption/flutter_string_encryption.dart';
 
 import '../../../constans.dart';
 
@@ -14,6 +15,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
     if (firebaseUser != null) {
+      print(firebaseUser.email);
       return MenuScreen();
     } else {
       return SingleChildScrollView(
@@ -78,7 +80,7 @@ class _LoginFormState extends State<LoginFormUser> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _empresaController = TextEditingController();
-
+  final TrabajadorProviderPrueba trabjador = TrabajadorProviderPrueba();
   void initState() {
     super.initState();
   }
@@ -102,7 +104,7 @@ class _LoginFormState extends State<LoginFormUser> {
           controller: _emailController,
           decoration: InputDecoration(
             icon: Icon(Icons.email),
-            labelText: "Email",
+            labelText: "DNI del trabajador",
           ),
           keyboardType: TextInputType.emailAddress,
           autovalidateMode: AutovalidateMode.always,
@@ -126,14 +128,45 @@ class _LoginFormState extends State<LoginFormUser> {
               var password = _passwordController.text.trim();
               var empresa = _empresaController.text.trim();
               if (email != "" && password != "" && empresa != "") {
-                try {
-                  context.read<AuthenticationService>().signIn(
-                        email: _emailController.text.trim(),
-                        password: _passwordController.text.trim(),
+                trabjador.cargarTrabajador(empresa, email).then(
+                  (value) async {
+                    if (value == null) {
+                      Scaffold.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Datos incorrectos"),
+                        ),
                       );
-                } on FirebaseAuthException catch (e) {
-                  return null;
-                }
+                    } else {
+                      final cryptor = new PlatformStringCryptor();
+                      final salt = await cryptor.generateSalt();
+                      final key =
+                          "jIkj0VOLhFpOJSpI7SibjA==:RZ03+kGZ/9Di3PT0a3xUDibD6gmb2RIhTVF+mQfZqy0=";
+                      String decrypter =
+                          await cryptor.decrypt(value.password, key);
+                      if (password == decrypter) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                MenuScreen(empresa: empresa, usuario: email),
+                          ),
+                        );
+                      } else {
+                        Scaffold.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text("Contraseña incorrecta"),
+                          ),
+                        );
+                      }
+                    }
+                  },
+                );
+              } else {
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("Rellena todos los campos"),
+                  ),
+                );
               }
             },
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,

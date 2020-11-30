@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_string_encryption/flutter_string_encryption.dart';
 import 'package:infowork/model/empresa.dart';
 import 'package:infowork/providers/empresa_provider.dart';
-import 'package:infowork/screens/menuempresa/components/menuempresa.dart';
 import 'package:infowork/screens/usuario_empresa/components/curvedwidget.dart';
 
 import '../../../constans.dart';
 
-class RegisterScreen extends StatelessWidget {
+class TrabajadorRegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,29 +107,21 @@ class _LoginFormState extends State<LoginForm> {
         ),
         Container(
           child: MaterialButton(
-            onPressed: () async {
+            onPressed: () {
               var direccion = _direccionController.text.trim();
               var password = _passwordController.text.trim();
               var empresa = _nombreEmpresa.text.trim();
               if (direccion != "" && password != "" && empresa != "") {
-                final cryptor = new PlatformStringCryptor();
-                final salt = await cryptor.generateSalt();
-                final key =
-                    "jIkj0VOLhFpOJSpI7SibjA==:RZ03+kGZ/9Di3PT0a3xUDibD6gmb2RIhTVF+mQfZqy0=";
-                empresamodel.password = await cryptor.encrypt(password, key);
-                empresamodel.nombre = empresa;
+                /*empresamodel.nombre = empresa;
                 empresamodel.plan = "gratis";
                 empresamodel.direccion = direccion;
                 empresaProvider
                     .cargarEmpresa(empresamodel.nombre)
                     .then((value) {
                   if (value == null) {
-                    empresaProvider.crearEmpresa(empresamodel);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            MenuEmpresaScreen(empresaModel: empresamodel),
+                    Scaffold.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("La empresa ya esta registrada"),
                       ),
                     );
                   } else {
@@ -141,7 +131,7 @@ class _LoginFormState extends State<LoginForm> {
                       ),
                     );
                   }
-                });
+                });*/
               } else {
                 Scaffold.of(context).showSnackBar(
                   SnackBar(

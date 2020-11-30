@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:infowork/screens/contrato/components/contrato_screen.dart';
-import 'package:infowork/screens/salud/components/salud.dart';
-import 'package:infowork/screens/normas/components/normas_screen.dart';
-import 'package:infowork/screens/perfil/components/perfil_screen.dart';
-import 'package:infowork/screens/sueldo/components/sueldo_screen.dart';
+import 'package:infowork/model/empresa.dart';
 
 import '../../../constans.dart';
 
 class Body extends StatelessWidget {
-  final String empresa;
-  final String usuario;
+  final EmpresaModel empresaModel;
 
-  const Body({Key key, this.empresa, this.usuario}) : super(key: key);
+  const Body({Key key, this.empresaModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,17 +74,7 @@ class Body extends StatelessWidget {
                           ],
                         ),
                       ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PerfilScreen(
-                              empresa: this.empresa,
-                              usuario: this.usuario,
-                            ),
-                          ),
-                        );
-                      },
+                      onTap: () {},
                     ),
                     InkWell(
                       child: Card(
@@ -115,17 +100,7 @@ class Body extends StatelessWidget {
                           ],
                         ),
                       ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SueldoScreen(
-                              empresa: this.empresa,
-                              usuario: this.usuario,
-                            ),
-                          ),
-                        );
-                      },
+                      onTap: () {},
                     ),
                     InkWell(
                       child: Card(
@@ -151,17 +126,7 @@ class Body extends StatelessWidget {
                           ],
                         ),
                       ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ContratoScreen(
-                              empresa: this.empresa,
-                              usuario: this.usuario,
-                            ),
-                          ),
-                        );
-                      },
+                      onTap: () {},
                     ),
                     InkWell(
                       child: Card(
@@ -187,17 +152,7 @@ class Body extends StatelessWidget {
                           ],
                         ),
                       ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SaludScreen(
-                              empresa: this.empresa,
-                              usuario: this.usuario,
-                            ),
-                          ),
-                        );
-                      },
+                      onTap: () {},
                     ),
                     InkWell(
                       child: Card(
@@ -223,16 +178,7 @@ class Body extends StatelessWidget {
                           ],
                         ),
                       ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => NormaScreen(
-                              empresa: this.empresa,
-                            ),
-                          ),
-                        );
-                      },
+                      onTap: () {},
                     ),
                     InkWell(
                       child: Card(

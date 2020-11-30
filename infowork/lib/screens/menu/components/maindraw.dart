@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infowork/screens/contrato/components/contrato_screen.dart';
 import 'package:infowork/screens/salud/components/salud.dart';
-import 'package:infowork/screens/login/components/login_screen.dart';
 import 'package:infowork/screens/normas/components/normas_screen.dart';
 import 'package:infowork/screens/perfil/components/perfil_screen.dart';
 import 'package:infowork/screens/sueldo/components/sueldo_screen.dart';
-import 'package:provider/provider.dart';
+import 'package:infowork/screens/usuario_empresa/components/usuario_empresa.dart';
 
 class MainDraw extends StatelessWidget {
+  final String empresa;
+  final String usuario;
+
+  const MainDraw({Key key, this.empresa, this.usuario}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -43,7 +46,10 @@ class MainDraw extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => PerfilScreen(),
+                builder: (context) => PerfilScreen(
+                  empresa: this.empresa,
+                  usuario: this.usuario,
+                ),
               ),
             );
           },
@@ -55,7 +61,10 @@ class MainDraw extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => SueldoScreen(),
+                builder: (context) => SueldoScreen(
+                  empresa: this.empresa,
+                  usuario: this.usuario,
+                ),
               ),
             );
           },
@@ -67,7 +76,10 @@ class MainDraw extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ContratoScreen(),
+                builder: (context) => ContratoScreen(
+                  empresa: this.empresa,
+                  usuario: this.usuario,
+                ),
               ),
             );
           },
@@ -79,7 +91,10 @@ class MainDraw extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => SaludScreen(),
+                builder: (context) => SaludScreen(
+                  empresa: this.empresa,
+                  usuario: this.usuario,
+                ),
               ),
             );
           },
@@ -91,7 +106,9 @@ class MainDraw extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => NormaScreen(),
+                builder: (context) => NormaScreen(
+                  empresa: this.empresa,
+                ),
               ),
             );
           },
@@ -104,7 +121,11 @@ class MainDraw extends StatelessWidget {
           leading: Icon(Icons.arrow_back),
           title: Text("Salir"),
           onTap: () {
-            context.read<AuthenticationService>().signOut();
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => UsuarioEmpresa(),
+              ),
+            );
           },
         ),
       ],

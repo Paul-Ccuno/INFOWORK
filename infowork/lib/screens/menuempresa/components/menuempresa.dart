@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:infowork/model/empresa.dart';
 import 'package:infowork/screens/help/components/help.dart';
-import 'package:infowork/screens/menu/components/body.dart';
-import 'package:infowork/screens/menu/components/maindraw.dart';
 
 import '../../../constans.dart';
+import 'body.dart';
+import 'maindrawempresa.dart';
 
-class MenuScreen extends StatelessWidget {
-  final String empresa;
-  final String usuario;
+class MenuEmpresaScreen extends StatelessWidget {
+  final EmpresaModel empresaModel;
 
-  const MenuScreen({Key key, this.empresa, this.usuario}) : super(key: key);
+  const MenuEmpresaScreen({Key key, this.empresaModel}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: buildAppBar(),
-      drawer: MainDraw(
-        empresa: this.empresa,
-        usuario: this.usuario,
-      ),
-      body: Body(
-        empresa: this.empresa,
-        usuario: this.usuario,
-      ),
+      drawer: MainDrawEmpresa(empresaModel: empresaModel),
+      body: Body(empresaModel: empresaModel),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(

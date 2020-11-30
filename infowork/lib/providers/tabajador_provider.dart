@@ -17,3 +17,22 @@ class TrabajadorProvider {
     }
   }
 }
+
+class TrabajadorProviderPrueba {
+  final String _url = 'https://infowork-7ce24.firebaseio.com';
+  Future<TrabajadorModel> cargarTrabajador(
+      String empresa, String usuario) async {
+    final url = '$_url/Empresa/' + empresa + '/Trabajador/' + usuario + '.json';
+    final resp = await http.get(url);
+    final Map<String, dynamic> decodeData = json.decode(resp.body);
+    if (decodeData == null) {
+      print("Asd");
+      return null;
+    } else {
+      final trabajadorTemp = TrabajadorModel.fromJson(decodeData);
+      print(trabajadorTemp.apellido);
+      print(trabajadorTemp.password);
+      return trabajadorTemp;
+    }
+  }
+}
