@@ -17,7 +17,7 @@ class EmpresaModel {
     this.password,
   });
 
-  TrabajadorModel trabajador;
+  List<TrabajadorModel> trabajador;
   String direccion;
   String nombre;
   String plan;
@@ -27,8 +27,17 @@ class EmpresaModel {
 
   factory EmpresaModel.fromJson(Map<String, dynamic> json) {
     if (json["Trabajador"] != null) {
+      print(json.keys.where((element) {
+        print(element);
+        return true;
+      }));
+      print(json["Trabajador"]);
+      TrabajadorModel a = new TrabajadorModel();
       return (EmpresaModel(
-        trabajador: TrabajadorModel.fromJson(json["Trabajador"]),
+        /*trabajador: List<TrabajadorModel>.from(
+          json.keys.map((x) => TrabajadorModel.fromJson(json)),
+        ),*/
+        trabajador: a.lista(json["Trabajador"]),
         direccion: json["direccion"],
         nombre: json["nombre"],
         plan: json["plan"],
@@ -48,8 +57,11 @@ class EmpresaModel {
 
   Map<String, dynamic> toJson() {
     if (this.trabajador != null) {
+      TrabajadorModel a = new TrabajadorModel();
+      Map<String, dynamic> ac = a.tojsonS(trabajador);
+      print(ac);
       return ({
-        "Trabajador": trabajador.toJson(),
+        "Trabajador": ac,
         "direccion": direccion,
         "nombre": nombre,
         "plan": plan,

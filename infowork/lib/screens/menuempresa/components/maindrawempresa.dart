@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infowork/model/empresa.dart';
+import 'package:infowork/screens/empresa_perfil/components/empresa_perfil.dart';
 import 'package:infowork/screens/usuario_empresa/components/usuario_empresa.dart';
 
 class MainDrawEmpresa extends StatelessWidget {
@@ -36,24 +37,37 @@ class MainDrawEmpresa extends StatelessWidget {
           ),
         ),
         ListTile(
-          leading: Icon(Icons.person),
+          leading: Icon(Icons.business),
           title: Text("Perfil"),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => EmpresaPerfilScreen(
+                  empresaModel: this.empresaModel,
+                ),
+              ),
+            );
+          },
         ),
         ListTile(
-          leading: Icon(Icons.monetization_on),
-          title: Text("Sueldo"),
-          onTap: () {},
-        ),
-        ListTile(
-          leading: Icon(Icons.file_copy_rounded),
-          title: Text("Contrato"),
+          leading: Icon(Icons.emoji_people),
+          title: Text("Empleados"),
           onTap: () {},
         ),
         ListTile(
           leading: Icon(Icons.local_hospital_rounded),
           title: Text("Salud"),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => EmpresaPerfilScreen(
+                  empresaModel: this.empresaModel,
+                ),
+              ),
+            );
+          },
         ),
         ListTile(
           leading: Icon(Icons.content_paste),
@@ -61,7 +75,7 @@ class MainDrawEmpresa extends StatelessWidget {
           onTap: () {},
         ),
         ListTile(
-          leading: Icon(Icons.business),
+          leading: Icon(Icons.chat),
           title: Text("Reclamo"),
         ),
         ListTile(

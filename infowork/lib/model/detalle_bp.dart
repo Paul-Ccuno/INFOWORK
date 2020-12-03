@@ -16,16 +16,21 @@ class BoletadePago {
   String fecha;
   String id;
 
-  factory BoletadePago.fromJson(Map<String, dynamic> json) => BoletadePago(
-        detalle: DetalleBpModel.fromJson(json["detalle"]),
-        fecha: json["fecha"],
-        id: json["id"],
-      );
+  factory BoletadePago.fromJson(Map<String, dynamic> json) {
+    print(json["detalle"]);
+    return (BoletadePago(
+      detalle: DetalleBpModel.fromJson(json["detalle"]),
+      fecha: json["fecha"],
+      id: json["id"],
+    ));
+  }
 
   Map<String, dynamic> toJson() => {
-        "detalle": detalle.toJson(),
-        "fecha": fecha,
-        "id": id,
+        "0": {
+          "detalle": detalle.toJson(),
+          "fecha": fecha,
+          "id": id,
+        }
       };
 }
 

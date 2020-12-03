@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_string_encryption/flutter_string_encryption.dart';
 import 'package:infowork/model/empresa.dart';
 import 'package:infowork/providers/empresa_provider.dart';
+import 'package:infowork/screens/menuempresa/components/menuempresa.dart';
 import 'package:infowork/screens/usuario_empresa/components/Register.dart';
 import 'package:infowork/screens/usuario_empresa/components/curvedwidget.dart';
 
@@ -102,21 +103,17 @@ class _LoginFormState extends State<LoginForm> {
               String nombre = _nombreEmpresa.text.trim();
               String password = _passwordController.text.trim();
               if (nombre != "" && password != "") {
-                empresaModel.nombre = nombre;
-                empresaProvider
-                    .cargarEmpresa(empresaModel.nombre)
-                    .then((value) async {
+                empresaProvider.cargarEmpresa(nombre).then((value) async {
                   if (value != null) {
-                    final cryptor = new PlatformStringCryptor();
-                    final salt = await cryptor.generateSalt();
-                    final key =
-                        "jIkj0VOLhFpOJSpI7SibjA==:RZ03+kGZ/9Di3PT0a3xUDibD6gmb2RIhTVF+mQfZqy0=";
-                    String decrypter =
-                        await cryptor.decrypt(value.password, key);
-                    if (password == decrypter) {
-                      Scaffold.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Logueado"),
+                    if (password == value.password) {
+                      empresaModel = value;
+                      print(empresaModel.normas);
+                      print(empresaModel.trabajador);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MenuEmpresaScreen(
+                              empresaModel: this.empresaModel),
                         ),
                       );
                     } else {

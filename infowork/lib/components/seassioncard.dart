@@ -26,7 +26,7 @@ class SeassionCard extends StatelessWidget {
         child: Container(
           width: constraint
               .maxWidth, // constraint.maxWidth provide us the available with for this widget
-          // padding: EdgeInsets.all(16),
+          //padding: EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: Colors.blue[50],
             borderRadius: BorderRadius.circular(13),
@@ -58,7 +58,7 @@ class SeassionCard extends StatelessWidget {
                       ),
                       child: SvgPicture.asset(image),
                     ),
-                    SizedBox(width: 40),
+                    SizedBox(width: 20),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[

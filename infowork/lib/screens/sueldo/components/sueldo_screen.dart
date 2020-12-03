@@ -25,6 +25,7 @@ class SueldoScreen extends StatelessWidget {
         if (snapshot.hasData) {
           var size = MediaQuery.of(context).size;
           final boleta = snapshot.data;
+          print(boleta.detalle.bonificacion);
           final List<Bonificacion> bonificaciones = boleta.detalle.bonificacion;
           final List<Bonificacion> descuentos = boleta.detalle.descuento;
 

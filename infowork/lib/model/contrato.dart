@@ -25,10 +25,14 @@ class ContratoModel {
         fechaVencimiento: json["fecha_vencimiento"],
       );
 
-  Map<String, dynamic> toJson() => {
-        "clausulas": clausulas,
-        "declaraciones": declaraciones,
-        "fechaEmision": fechaEmision,
-        "fechaVencimiento": fechaVencimiento,
-      };
+  Map<String, dynamic> toJson() {
+    return ({
+      "001": {
+        "Clausulas": clausulas,
+        "Declaraciones": declaraciones,
+      },
+      "fecha_emision": fechaEmision,
+      "fecha_vencimiento": fechaVencimiento,
+    });
+  }
 }
