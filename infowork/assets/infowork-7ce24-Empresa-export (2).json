@@ -1,0 +1,167 @@
+{
+  "Claro" : {
+    "Trabajador" : {
+      "74201693" : {
+        "Apellido" : "Arnaldo",
+        "Contrato" : {
+          "001" : {
+            "Clausulas" : [ "El empleador es una empresa cuyo objeto social es la venta de dispositivos móviles a los clientes que requiere los servicios del trabajador en forma solicitada.", "La empresa requiere atender necesidades transitorias destinadas a su actividad habitual motivadas por el incremento de exportaciones hacia Estados Unidos de productos de Samsung, Apple, etc. debido a las leyes de Estados Unidos.", "En razón de las causas objetivas señaladas en la cláusula anterior, la empresa contrata a plazo fijo bajo la modalidad de contrato de emergencia los servicios del trabajador para que realice las labores de Jefe de obra, debiendo someterse al cumplimiento estricto de la labor para la cual a sido contratado bajo las directivas que emanan de sus jefes.", "El plazo de vigencia del presente contrato es de seis (6) meses iniciándose la relación laboral el 01 de agosto del 2020.", "El periodo de prueba es de 2 meses, transcurrido este plazo si el empleador resolviera injustificadamente el contrato deberá abonar a el trabajador las remuneraciones dejadas de percibir hasta el vencimiento del contrato.", "En contraprestación a los servicios del trabajador, el empleador se obliga a pagar una remuneración semanal de s/. 812.00 (ochocientos doce 00/100 nuevos soles) monto que podrá ser incrementado de acuerdo a la política remunerativa de la empresa. igualmente se obliga a facilitar a el trabajador los materiales necesarios para el desarrollo de sus actividades y los beneficios que por ley, pacto o costumbre tuvieran los trabajadores contratados a plazo indeterminado." ],
+            "Declaraciones" : [ "Deberán ser declarados y registrados por su empleador. El empleador, además, será quien asuma íntegramente el aporte mensual de la cobertura de salud.", "Tu empleador también hará el registro y declaración de tus dependientes; sin embargo, deberás proveerle algunos requisitos para que pueda hacerlo.", "Será la entidad que le otorga la pensión la encargada de registrarlos, declararlos y pagar mensualmente por su cobertura con cargo a su pensión a EsSalud.  Excepcionalmente EsSalud realiza el registro de asegurados en el caso de que la información no se encuentre en los sistemas informáticos. Para esto se deberá presentar previamente la documentación sustentatoria de ser trabajador dependiente. Este registro excepcional se podrá haceren cualquiera de las Oficinas de Seguros y Prestaciones Económicas de ESSALUD a nivel nacional." ]
+          },
+          "fecha_emision" : "01/08/2020",
+          "fecha_vencimiento" : "30/10/2020"
+        },
+        "boletapago" : [ {
+          "detalle" : {
+            "Bonificacion" : [ {
+              "cantidad" : 50,
+              "nombre" : "Productividad"
+            }, {
+              "cantidad" : 50,
+              "nombre" : "Permanencia"
+            } ],
+            "Descuento" : [ {
+              "cantidad" : 30,
+              "nombre" : "Tardanza"
+            }, {
+              "cantidad" : 30,
+              "nombre" : "Falta"
+            } ],
+            "monto" : 1240.5
+          },
+          "fecha" : "30/30/2020",
+          "id" : "C0001"
+        } ],
+        "correo" : "paullccuno@gmail.com",
+        "edad" : 20,
+        "nombre" : "Paul",
+        "password" : "S10s9tjtijYZBPwn66Gy0Q==:f0vlKEd1T6gQrgE0XAGUFQZvPI8Aq/UaLaLi8Gby6Fk=:71DI7CwjNFXtzzDqmqotZw==",
+        "sueldo" : 1200.5
+      },
+      "74201694" : {
+        "Apellido" : "Arnaldo",
+        "Contrato" : {
+          "001" : {
+            "Clausulas" : [ "El empleador es una empresa cuyo objeto social es la venta de dispositivos móviles a los clientes que requiere los servicios del trabajador en forma solicitada.", "La empresa requiere atender necesidades transitorias destinadas a su actividad habitual motivadas por el incremento de exportaciones hacia Estados Unidos de productos de Samsung, Apple, etc. debido a las leyes de Estados Unidos.", "En razón de las causas objetivas señaladas en la cláusula anterior, la empresa contrata a plazo fijo bajo la modalidad de contrato de emergencia los servicios del trabajador para que realice las labores de Jefe de obra, debiendo someterse al cumplimiento estricto de la labor para la cual a sido contratado bajo las directivas que emanan de sus jefes.", "El plazo de vigencia del presente contrato es de seis (6) meses iniciándose la relación laboral el 01 de agosto del 2020.", "El periodo de prueba es de 2 meses, transcurrido este plazo si el empleador resolviera injustificadamente el contrato deberá abonar a el trabajador las remuneraciones dejadas de percibir hasta el vencimiento del contrato.", "En contraprestación a los servicios del trabajador, el empleador se obliga a pagar una remuneración semanal de s/. 812.00 (ochocientos doce 00/100 nuevos soles) monto que podrá ser incrementado de acuerdo a la política remunerativa de la empresa. igualmente se obliga a facilitar a el trabajador los materiales necesarios para el desarrollo de sus actividades y los beneficios que por ley, pacto o costumbre tuvieran los trabajadores contratados a plazo indeterminado." ],
+            "Declaraciones" : [ "Deberán ser declarados y registrados por su empleador. El empleador, además, será quien asuma íntegramente el aporte mensual de la cobertura de salud.", "Tu empleador también hará el registro y declaración de tus dependientes; sin embargo, deberás proveerle algunos requisitos para que pueda hacerlo.", "Será la entidad que le otorga la pensión la encargada de registrarlos, declararlos y pagar mensualmente por su cobertura con cargo a su pensión a EsSalud.  Excepcionalmente EsSalud realiza el registro de asegurados en el caso de que la información no se encuentre en los sistemas informáticos. Para esto se deberá presentar previamente la documentación sustentatoria de ser trabajador dependiente. Este registro excepcional se podrá haceren cualquiera de las Oficinas de Seguros y Prestaciones Económicas de ESSALUD a nivel nacional." ]
+          },
+          "fecha_emision" : "01/08/2020",
+          "fecha_vencimiento" : "30/10/2020"
+        },
+        "boletapago" : [ {
+          "detalle" : {
+            "Bonificacion" : [ {
+              "cantidad" : 50,
+              "nombre" : "Productividad"
+            }, {
+              "cantidad" : 50,
+              "nombre" : "Permanencia"
+            } ],
+            "Descuento" : [ {
+              "cantidad" : 30,
+              "nombre" : "Tardanza"
+            }, {
+              "cantidad" : 30,
+              "nombre" : "Falta"
+            } ],
+            "monto" : 1240.5
+          },
+          "fecha" : "30/30/2020",
+          "id" : "C0001"
+        } ],
+        "correo" : "paullccuno@gmail.com",
+        "edad" : 20,
+        "nombre" : "Paul",
+        "password" : "S10s9tjtijYZBPwn66Gy0Q==:f0vlKEd1T6gQrgE0XAGUFQZvPI8Aq/UaLaLi8Gby6Fk=:71DI7CwjNFXtzzDqmqotZw==",
+        "sueldo" : 1200.5
+      }
+    },
+    "direccion" : "Cercado de Lima",
+    "nombre" : "Claro",
+    "normas" : [ "Todo trabajador que ingrese a CLARO tiene la obligación de conocer el contenido del presente Reglamento, por tal motivo se les proporcionará un ejemplar del mismo, cuya recepción debe ser comprobada mediante firma.", "Al momento de su ingreso, el nuevo trabajador recibirá instrucciones sobre el horario, las responsabilidades y obligaciones inherentes de su puesto y turnos de trabajo.", "Todos Los derechos de los trabajadores se regularan por las leyes vigentes en el país.", "La Empresa se compromete a promover el respeto mutuo y la cordialidad entre todos los trabajadores de los distintos niveles jerárquicos de la organización.", "El derecho a la identidad. Las disposiciones jurídicas que proveen a las personas de acceso a una identidad legal, a una documentación propia y a un nombre, por ejemplo, obedecen a una normativa jurídica que establece dicho derecho para todos por igual y sin excepciones.", "El derecho a la propiedad. Uno de los derechos más arduamente defendidos por la sociedad capitalista y también más cuestionados por el pensamiento de izquierdas, se encuentra contemplado en la normativa jurídica que le permite a un individuo poseer de manera privada los bienes que pueda comprar o heredar mediante procedimientos legales y honrados.", "El derecho a un justo proceso. Ningún individuo culpable de un delito de cualquier naturaleza estará despojado del derecho a una legítima defensa y un proceso judicial adecuado, en el que se escuchen sus alegatos y pueda defender sus intereses. La normativa que así lo garantiza forma parte de los llamados derechos humanos y son, en teoría, inalienables.", "El derecho a guardar silencio. Esta fórmula es muy frecuentemente invocada en las series de televisión policiales o las películas de detectives, cuando finalmente apresan al antagonista. Se trata de un derecho común a todo detenido, en el cual se le permite refugiarse en el silencio hasta contar con la presencia de un abogado." ],
+    "password" : "VG2rsIF8XgEptLRdjMCWBQ==:VQHNGW1IlD1Z/b3VG9I2mPMOMiO3TW//1ouVR6GuN/Q=:mFhRfAEJsNTMwjywPgxo+g==",
+    "plan" : "gratis",
+    "salud" : [ "Cuentas con atención en más de 450 de las principales clínicas en Lima y provincias.", "Atenciones ambulatorias, hospitalización  y exámenes.", "Si tienes una emergencia, cubrimos los tratamientos y controles.", "Cobertura oncológica: antes, durante y después.", "Chequeo médico preventivo." ]
+  },
+  "Empresa1" : {
+    "direccion" : "Av. Kennedy",
+    "nombre" : "Empresa1",
+    "password" : "XM/2OGAvAiEeUCp5uirWlA==:2KglQC0rAihhVD0e6Lx8p0cIILMT+ZC7S0xizjrT004=:vc+FBNFh9blkJPSowAwWlw==",
+    "plan" : "gratis"
+  },
+  "Movistar" : {
+    "Trabajador" : {
+      "74201591" : {
+        "Apellido" : "Lipa",
+        "Contrato" : {
+          "001" : {
+            "Clausulas" : [ "El empleador es una empresa cuyo objeto social es la atención al cliente que requiere los servicios del trabajador en forma solicitada.", "La empresa requiere atender necesidades transitorias destinadas a su actividad habitual motivadas por el incremento de exportaciones hacia Estados Unidos de productos de Samsung, Apple, etc. debido a las leyes de Estados Unidos.", "En razón de las causas objetivas señaladas en la cláusula anterior, la empresa contrata a plazo fijo bajo la modalidad de contrato de emergencia los servicios del trabajador para que realice las labores de Jefe de obra, debiendo someterse al cumplimiento estricto de la labor para la cual a sido contratado bajo las directivas que emanan de sus jefes.", "El plazo de vigencia del presente contrato es de seis (6) meses iniciándose la relación laboral el 01 de agosto del 2020.", "El periodo de prueba es de dos (2) meses, transcurrido este plazo si el empleador resolviera injustificadamente el contrato deberá abonar a el trabajador las remuneraciones dejadas de percibir hasta el vencimiento del contrato.", "En contraprestación a los servicios del empleador, el trabajador se obliga a pagar una remuneración semanal de s/.120.00 (ciento veinte 00/100nuevos soles) monto que podrá ser incrementado de acuerdo a la política remunerativa de la empresa. igualmente se obliga a facilitar a el trabajador los materiales necesarios para el desarrollo de sus actividades y los beneficios que por ley, pacto o costumbre tuvieran los trabajadores contratados a plazo indeterminado." ],
+            "Declaraciones" : [ "Deberán ser declarados y registrados por su empleador. El empleador, además, será quien asuma íntegramente el aporte mensual de la cobertura de salud.", "Tu empleador también hará el registro y declaración de tus dependientes; sin embargo, deberás proveerle algunos requisitos para que pueda hacerlo.", "Será la entidad que le otorga la pensión la encargada de registrarlos, declararlos y pagar mensualmente por su cobertura con cargo a su pensión a EsSalud.  Excepcionalmente EsSalud realiza el registro de asegurados en el caso de que la información no se encuentre en los sistemas informáticos. Para esto se deberá presentar previamente la documentación sustentatoria de ser trabajador dependiente. Este registro excepcional se podrá haceren cualquiera de las Oficinas de Seguros y Prestaciones Económicas de ESSALUD a nivel nacional." ]
+          }
+        },
+        "boletapago" : [ {
+          "detalle" : {
+            "Bonificacion" : [ {
+              "cantidad" : 40,
+              "nombre" : "Productividad"
+            }, {
+              "cantidad" : 40,
+              "nombre" : "Permanencia"
+            } ],
+            "Descuento" : [ {
+              "cantidad" : 50,
+              "nombre" : "Tardanza"
+            } ],
+            "monto" : 1230.5
+          },
+          "fecha" : "30/30/2020",
+          "id" : "B0001"
+        } ],
+        "edad" : 20,
+        "nombre" : "Jose",
+        "password" : "VG2rsIF8XgEptLRdjMCWBQ==:VQHNGW1IlD1Z/b3VG9I2mPMOMiO3TW//1ouVR6GuN/Q=:mFhRfAEJsNTMwjywPgxo+g==",
+        "sueldo" : 1200.5
+      },
+      "74201693" : {
+        "Apellido" : "Arnaldo",
+        "Contrato" : {
+          "001" : {
+            "Clausulas" : [ "El empleador es una empresa cuyo objeto social es la venta de dispositivos móviles a los clientes que requiere los servicios del trabajador en forma solicitada.", "La empresa requiere atender necesidades transitorias destinadas a su actividad habitual motivadas por el incremento de exportaciones hacia Estados Unidos de productos de Samsung, Apple, etc. debido a las leyes de Estados Unidos.", "En razón de las causas objetivas señaladas en la cláusula anterior, la empresa contrata a plazo fijo bajo la modalidad de contrato de emergencia los servicios del trabajador para que realice las labores de Jefe de obra, debiendo someterse al cumplimiento estricto de la labor para la cual a sido contratado bajo las directivas que emanan de sus jefes.", "El plazo de vigencia del presente contrato es de seis (6) meses iniciándose la relación laboral el 01 de agosto del 2020.", "El periodo de prueba es de 2 meses, transcurrido este plazo si el empleador resolviera injustificadamente el contrato deberá abonar a el trabajador las remuneraciones dejadas de percibir hasta el vencimiento del contrato.", "En contraprestación a los servicios del trabajador, el empleador se obliga a pagar una remuneración semanal de s/. 812.00 (ochocientos doce 00/100 nuevos soles) monto que podrá ser incrementado de acuerdo a la política remunerativa de la empresa. igualmente se obliga a facilitar a el trabajador los materiales necesarios para el desarrollo de sus actividades y los beneficios que por ley, pacto o costumbre tuvieran los trabajadores contratados a plazo indeterminado." ],
+            "Declaraciones" : [ "Deberán ser declarados y registrados por su empleador. El empleador, además, será quien asuma íntegramente el aporte mensual de la cobertura de salud.", "Tu empleador también hará el registro y declaración de tus dependientes; sin embargo, deberás proveerle algunos requisitos para que pueda hacerlo.", "Será la entidad que le otorga la pensión la encargada de registrarlos, declararlos y pagar mensualmente por su cobertura con cargo a su pensión a EsSalud.  Excepcionalmente EsSalud realiza el registro de asegurados en el caso de que la información no se encuentre en los sistemas informáticos. Para esto se deberá presentar previamente la documentación sustentatoria de ser trabajador dependiente. Este registro excepcional se podrá haceren cualquiera de las Oficinas de Seguros y Prestaciones Económicas de ESSALUD a nivel nacional." ]
+          }
+        },
+        "boletapago" : [ {
+          "detalle" : {
+            "Bonificacion" : [ {
+              "cantidad" : 50,
+              "nombre" : "Productividad"
+            }, {
+              "cantidad" : 50,
+              "nombre" : "Permanencia"
+            } ],
+            "Descuento" : [ {
+              "cantidad" : 30,
+              "nombre" : "Tardanza"
+            }, {
+              "cantidad" : 30,
+              "nombre" : "Falta"
+            } ],
+            "monto" : 1240.5
+          },
+          "fecha" : "30/30/2020",
+          "id" : "C0001"
+        } ],
+        "edad" : 20,
+        "nombre" : "Paul",
+        "password" : "S10s9tjtijYZBPwn66Gy0Q==:f0vlKEd1T6gQrgE0XAGUFQZvPI8Aq/UaLaLi8Gby6Fk=:71DI7CwjNFXtzzDqmqotZw==",
+        "sueldo" : 1200.5
+      }
+    },
+    "direccion" : "Mall Aventura Arequipa",
+    "nombre" : "Movistar",
+    "normas" : [ "Todo trabajador que ingrese a MOVISTAR tiene la obligación de conocer el contenido del presente Reglamento, por tal motivo se les proporcionará un ejemplar del mismo, cuya recepción debe ser comprobada mediante firma.", "Al momento de su ingreso, el nuevo trabajador recibirá instrucciones sobre el horario, las responsabilidades y obligaciones inherentes de su puesto y turnos de trabajo.", "Todos Los derechos de los trabajadores se regularan por las leyes vigentes en el país.", "La Empresa se compromete a promover el respeto mutuo y la cordialidad entre todos los trabajadores de los distintos niveles jerárquicos de la organización.", "El derecho a guardar silencio. Esta fórmula es muy frecuentemente invocada en las series de televisión policiales o las películas de detectives, cuando finalmente apresan al antagonista. Se trata de un derecho común a todo detenido, en el cual se le permite refugiarse en el silencio hasta contar con la presencia de un abogado.", "El derecho a participar políticamente. Todo ciudadano que cumpla con los requisitos de edad y estado legal dispuestos en el código electoral de su nación podrá participar de los comicios políticos cuando así lo disponga, ya que existen normativas jurídicas que se lo permiten y que amparan su derecho a elegir la representación política que mejor estime conveniente para sus intereses.", "La prohibición del robo. Los cimientos de la sociedad según la entendemos pasa por el entendimiento de que los bienes son escasos y las necesidades infinitas, por lo que cada individuo deberá ganarse su acceso a los mismos: mediante trabajo o capitales. De allí que apropiarse de los bienes ajenos contravenga el sentido mismo del reparto del trabajo y el bienestar común y esté expresamente prohibido y penalizado legalmente con cárcel.", "La prohibición del asesinato. Otra de las prohibiciones fundamentales de la vida en sociedad, fruto del monopolio de la violencia atribuido al Estado. Ninguna persona deberá poder acabar con la vida de otra, excepto en casos de legítima defensa de la propia. Contravenir esta norma acarrea severas sanciones legales, como años de prisión o, en algunos países, la propia muerte." ],
+    "password" : "BvIC/gCS5VdUdTESTK2n0g==:VMA1MxMmt1bbSj5WpLcatgO96D/2wlM6puXe0ILKe7Q=:iQeW10YlnXrFk0uBUUONFQ==",
+    "plan" : "gratis",
+    "salud" : [ "Atenciones ambulatorias, hospitalización  y exámenes.", "Cuentas con atención en más de 450 de las principales clínicas en Lima y provincias.", "Si tienes una emergencia, cubrimos los tratamientos y controles.", "Cobertura oncológica: antes, durante y después.", "Chequeo médico preventivo." ]
+  }
+}

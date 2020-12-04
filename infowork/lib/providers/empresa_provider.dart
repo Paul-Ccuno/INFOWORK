@@ -60,4 +60,34 @@ class EmpresaProvider {
     print(json.decode(resp.body));
     return true;
   }
+
+  Future<bool> actualizarsalud(int index, String salud, String empresa) async {
+    final url = '$_url/Empresa';
+    final resp = await http.put(
+      url + "/" + empresa + "/" + "salud" + "/" + index.toString() + ".json",
+      body: json.encode(salud),
+    );
+    print(json.decode(resp.body));
+    return true;
+  }
+
+  Future<bool> crearsalud(List<String> salud, String empresa) async {
+    final url = '$_url/Empresa';
+    final resp = await http.put(
+      url + "/" + empresa + "/" + "salud" + ".json",
+      body: json.encode(List<dynamic>.from(salud.map((x) => x))),
+    );
+    final decodedData = json.decode(resp.body);
+    print(decodedData);
+    return true;
+  }
+
+  Future<bool> eliminarsalud(int index, String empresa) async {
+    final url = '$_url/Empresa';
+    final resp = await http.delete(
+      url + "/" + empresa + "/" + "salud" + "/" + index.toString() + ".json",
+    );
+    print(json.decode(resp.body));
+    return true;
+  }
 }
