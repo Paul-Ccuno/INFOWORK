@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infowork/model/empresa.dart';
 import 'package:infowork/screens/empresa_perfil/components/empresa_perfil.dart';
+import 'package:infowork/screens/normas_empresa/components/normas_empresa.dart';
 import 'package:infowork/screens/saludempresa/components/salud_empresa.dart';
 
 import '../../../constans.dart';
@@ -172,7 +173,16 @@ class Body extends StatelessWidget {
                           ],
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => NormaEmpresaScreen(
+                              empresaModel: this.empresaModel,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     InkWell(
                       child: Card(

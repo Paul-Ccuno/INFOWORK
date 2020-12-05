@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infowork/model/empresa.dart';
 import 'package:infowork/screens/empresa_perfil/components/empresa_perfil.dart';
+import 'package:infowork/screens/saludempresa/components/salud_empresa.dart';
 import 'package:infowork/screens/usuario_empresa/components/usuario_empresa.dart';
 
 class MainDrawEmpresa extends StatelessWidget {
@@ -62,7 +63,7 @@ class MainDrawEmpresa extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => EmpresaPerfilScreen(
+                builder: (context) => SaludEmpresaScreen(
                   empresaModel: this.empresaModel,
                 ),
               ),

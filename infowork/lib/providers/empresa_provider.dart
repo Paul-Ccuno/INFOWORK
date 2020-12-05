@@ -90,4 +90,34 @@ class EmpresaProvider {
     print(json.decode(resp.body));
     return true;
   }
+
+  Future<bool> actualizarnormas(int index, String norma, String empresa) async {
+    final url = '$_url/Empresa';
+    final resp = await http.put(
+      url + "/" + empresa + "/" + "normas" + "/" + index.toString() + ".json",
+      body: json.encode(norma),
+    );
+    print(json.decode(resp.body));
+    return true;
+  }
+
+  Future<bool> crearnormas(List<String> normas, String empresa) async {
+    final url = '$_url/Empresa';
+    final resp = await http.put(
+      url + "/" + empresa + "/" + "normas" + ".json",
+      body: json.encode(List<dynamic>.from(normas.map((x) => x))),
+    );
+    final decodedData = json.decode(resp.body);
+    print(decodedData);
+    return true;
+  }
+
+  Future<bool> eliminarnormas(int index, String empresa) async {
+    final url = '$_url/Empresa';
+    final resp = await http.delete(
+      url + "/" + empresa + "/" + "normas" + "/" + index.toString() + ".json",
+    );
+    print(json.decode(resp.body));
+    return true;
+  }
 }

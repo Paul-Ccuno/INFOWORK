@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_string_encryption/flutter_string_encryption.dart';
 import 'package:infowork/model/empresa.dart';
 import 'package:infowork/providers/empresa_provider.dart';
 import 'package:infowork/screens/menuempresa/components/menuempresa.dart';

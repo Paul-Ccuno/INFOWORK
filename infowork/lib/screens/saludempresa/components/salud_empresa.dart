@@ -63,7 +63,12 @@ class SaludEmpresaScreen extends StatelessWidget {
                 elevation: 5.0,
                 child: Text("Crear"),
                 onPressed: () {
-                  empresaModel.salud.add(_nombreEmpresa.text.trim());
+                  if (empresaModel.salud == null) {
+                    empresaModel.salud = [];
+                    empresaModel.salud.add(_nombreEmpresa.text.trim());
+                  } else {
+                    empresaModel.salud.add(_nombreEmpresa.text.trim());
+                  }
                   contratoProvider.crearsalud(
                     empresaModel.salud,
                     empresaModel.nombre,
@@ -160,6 +165,8 @@ class SaludEmpresaScreen extends StatelessWidget {
         if (snapshot.hasData) {
           var size = MediaQuery.of(context).size;
           final declaraciones = snapshot.data.salud;
+          empresaModel.salud = declaraciones;
+
           return Stack(
             children: <Widget>[
               Container(
@@ -215,33 +222,41 @@ class SaludEmpresaScreen extends StatelessWidget {
                             ),
                             Expanded(
                               child: ListView.builder(
-                                  itemCount: empresaModel.salud.length,
-                                  itemBuilder: (context, i) {
-                                    Key a = new Key(empresaModel.salud[i]);
-                                    return new Dismissible(
-                                      key: a,
-                                      onDismissed: (direction) {
+                                itemCount: empresaModel.salud != null
+                                    ? empresaModel.salud.length
+                                    : 0,
+                                itemBuilder: (context, i) {
+                                  Key a = new Key(empresaModel.salud[i]);
+                                  return new Dismissible(
+                                    key: a,
+                                    onDismissed: (direction) {
+                                      if (i >= empresaModel.salud.length) {
+                                        empresaModel.salud.removeAt(
+                                            empresaModel.salud.length - 1);
+                                      } else {
                                         empresaModel.salud.removeAt(i);
-                                        contratoProvider.eliminarsalud(
-                                          i,
-                                          empresaModel.nombre,
-                                        );
-                                        Scaffold.of(context).showSnackBar(
-                                          new SnackBar(
-                                            content: new Text(
-                                              "elemento eliminado",
-                                            ),
+                                      }
+                                      contratoProvider.crearsalud(
+                                        empresaModel.salud,
+                                        empresaModel.nombre,
+                                      );
+                                      Scaffold.of(context).showSnackBar(
+                                        new SnackBar(
+                                          content: new Text(
+                                            "elemento eliminado",
                                           ),
-                                        );
-                                      },
-                                      child: _crearItem(
-                                        empresaModel.salud[i],
-                                        "d",
-                                        context,
-                                        i,
-                                      ),
-                                    );
-                                  }),
+                                        ),
+                                      );
+                                    },
+                                    child: _crearItem(
+                                      empresaModel.salud[i],
+                                      "d",
+                                      context,
+                                      i,
+                                    ),
+                                  );
+                                },
+                              ),
                             ),
                           ],
                         ),
