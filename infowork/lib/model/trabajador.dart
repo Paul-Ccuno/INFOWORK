@@ -54,6 +54,15 @@ class TrabajadorModel {
       ));
     }
   }
+  Map<String, dynamic> toJson1() {
+    return ({
+      "nombre": nombre,
+      "Apellido": apellido,
+      "edad": edad,
+      "sueldo": sueldo,
+      "password": password,
+    });
+  }
 
   Map<String, dynamic> toJson() => {
         dni: {

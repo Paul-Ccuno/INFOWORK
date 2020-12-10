@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter_string_encryption/flutter_string_encryption.dart';
 import 'package:infowork/model/empresa.dart';
 import 'package:http/http.dart' as http;
+import 'package:infowork/model/trabajador.dart';
 
 class EmpresaProvider {
   final String _url = 'https://infowork-7ce24.firebaseio.com';
@@ -116,6 +117,48 @@ class EmpresaProvider {
     final url = '$_url/Empresa';
     final resp = await http.delete(
       url + "/" + empresa + "/" + "normas" + "/" + index.toString() + ".json",
+    );
+    print(json.decode(resp.body));
+    return true;
+  }
+
+  Future<bool> crearTrabajador(
+      String empresa, TrabajadorModel trabajadores) async {
+    final url = '$_url/Empresa';
+    final cryptor = new PlatformStringCryptor();
+    final salt = await cryptor.generateSalt();
+    final key =
+        "jIkj0VOLhFpOJSpI7SibjA==:RZ03+kGZ/9Di3PT0a3xUDibD6gmb2RIhTVF+mQfZqy0=";
+    trabajadores.password = await cryptor.encrypt(trabajadores.password, key);
+    final resp = await http.put(
+      url +
+          "/" +
+          empresa +
+          "/" +
+          "Trabajador" +
+          "/" +
+          trabajadores.dni.toString() +
+          ".json",
+      body: json.encode(
+        trabajadores.toJson1(),
+      ),
+    );
+    print(json.decode(resp.body));
+    return true;
+  }
+
+  Future<bool> eliminartrabajador(
+      String empresa, TrabajadorModel trabajador) async {
+    final url = '$_url/Empresa';
+    final resp = await http.delete(
+      url +
+          "/" +
+          empresa +
+          "/" +
+          "Trabajador" +
+          "/" +
+          trabajador.dni.toString() +
+          ".json",
     );
     print(json.decode(resp.body));
     return true;

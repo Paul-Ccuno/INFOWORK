@@ -16,7 +16,6 @@ class EmpresaModel {
     this.salud,
     this.password,
   });
-
   List<TrabajadorModel> trabajador;
   String direccion;
   String nombre;
