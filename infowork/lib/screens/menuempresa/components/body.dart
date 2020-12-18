@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infowork/model/empresa.dart';
+import 'package:infowork/screens/Chat/Components/chat.dart';
 import 'package:infowork/screens/empresa_perfil/components/empresa_perfil.dart';
 import 'package:infowork/screens/normas_empresa/components/normas_empresa.dart';
 import 'package:infowork/screens/saludempresa/components/salud_empresa.dart';
@@ -218,6 +219,16 @@ class Body extends StatelessWidget {
                           ],
                         ),
                       ),
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChatScreen(
+                              empresa: "#asd",
+                            ),
+                          ),
+                        );
+                      },
                     )
                   ],
                 )

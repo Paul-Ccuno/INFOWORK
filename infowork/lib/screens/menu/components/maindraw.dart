@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:infowork/screens/Chat/Components/chat.dart';
 import 'package:infowork/screens/contrato/components/contrato_screen.dart';
 import 'package:infowork/screens/salud/components/salud.dart';
 import 'package:infowork/screens/normas/components/normas_screen.dart';
@@ -116,6 +117,17 @@ class MainDraw extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.business),
           title: Text("Reclamo"),
+          onTap: ()
+          {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ChatScreen(
+                  empresa: this.empresa,
+                ),
+              ),
+            );
+          },
         ),
         ListTile(
           leading: Icon(Icons.arrow_back),
