@@ -8,6 +8,35 @@ TrabajadorModel trabajadorModelFromJson(String str) =>
 
 String trabajadorModelToJson(TrabajadorModel data) =>
     json.encode(data.toJson());
+class MensajeModel{
+  String fecha;
+  String autor;
+  String mensaje;
+  MensajeModel({
+    this.autor,
+    this.mensaje,
+    this.fecha
+  });
+  factory MensajeModel.fromJson(Map<dynamic,dynamic> json){
+    print("asdss");
+    return MensajeModel(
+      fecha: json["fecha"],
+      autor: json["autor"],
+      mensaje: json["mensaje"]
+    );
+  }
+  List<MensajeModel> listamensajes(json){
+    List<MensajeModel> mensajes = new List();
+    for(var variable in json){
+      mensajes.add(MensajeModel(
+        autor: variable["autor"],
+        fecha: variable["tiempo"],
+        mensaje: variable["mensaje"]
+      ));
+    }
+    return mensajes;
+  }
+}
 
 class TrabajadorModel {
   TrabajadorModel({
@@ -19,6 +48,7 @@ class TrabajadorModel {
     this.dni,
     this.contrato,
     this.boletapago,
+    this.mensajes
   });
 
   String nombre;
@@ -29,6 +59,7 @@ class TrabajadorModel {
   String dni;
   ContratoModel contrato;
   BoletadePago boletapago;
+  List<MensajeModel> mensajes;
 
   factory TrabajadorModel.fromJson(Map<dynamic, dynamic> json) {
     if (json["Contrato"] != null) {
@@ -44,6 +75,7 @@ class TrabajadorModel {
         boletapago: BoletadePago.fromJson(json["boletapago"][0]),
       ));
     } else {
+      MensajeModel mensajes= new MensajeModel();
       return (TrabajadorModel(
         nombre: json["nombre"],
         apellido: json["Apellido"],
@@ -51,6 +83,7 @@ class TrabajadorModel {
         sueldo: json["sueldo"],
         password: json["password"],
         dni: json["dni"],
+        mensajes: json["mensajes"]!=null? mensajes.listamensajes(json["mensajes"]):null
       ));
     }
   }
@@ -77,6 +110,7 @@ class TrabajadorModel {
     List<TrabajadorModel> trabajadores = new List();
     print(json.keys);
     json.forEach((key, value) {
+      print("ASD");
       value["dni"] = key;
       TrabajadorModel tratrabajador = new TrabajadorModel.fromJson(value);
       trabajadores.add(tratrabajador);

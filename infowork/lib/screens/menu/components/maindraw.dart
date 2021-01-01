@@ -119,14 +119,6 @@ class MainDraw extends StatelessWidget {
           title: Text("Reclamo"),
           onTap: ()
           {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ChatScreen(
-                  empresa: this.empresa,
-                ),
-              ),
-            );
           },
         ),
         ListTile(

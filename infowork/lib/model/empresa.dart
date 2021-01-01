@@ -26,6 +26,7 @@ class EmpresaModel {
 
   factory EmpresaModel.fromJson(Map<String, dynamic> json) {
     TrabajadorModel a = new TrabajadorModel();
+    print(json);
     return (EmpresaModel(
       trabajador:
           json["Trabajador"] != null ? a.lista(json["Trabajador"]) : null,

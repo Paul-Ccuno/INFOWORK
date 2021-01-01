@@ -224,7 +224,7 @@ class Body extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => ChatScreen(
-                              empresa: "#asd",
+                              empresa: this.empresaModel,
                             ),
                           ),
                         );

@@ -260,14 +260,6 @@ class Body extends StatelessWidget {
                         ),
                       ),
                       onTap: (){
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ChatScreen(
-                              empresa: this.empresa,
-                            ),
-                          ),
-                        );
                       },
                     )
 
