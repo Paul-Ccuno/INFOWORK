@@ -21,7 +21,6 @@ class EmpresaProvider {
       final empresaTemp = EmpresaModel.fromJson(decodeData);
 
       empresaTemp.password = await cryptor.decrypt(empresaTemp.password, key);
-
       return empresaTemp;
     }
   }

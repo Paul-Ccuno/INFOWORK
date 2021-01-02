@@ -12,17 +12,20 @@ class MensajeModel{
   String fecha;
   String autor;
   String mensaje;
+  bool estado;
   MensajeModel({
     this.autor,
     this.mensaje,
-    this.fecha
+    this.fecha,
+    this.estado
   });
   factory MensajeModel.fromJson(Map<dynamic,dynamic> json){
     print("asdss");
     return MensajeModel(
       fecha: json["fecha"],
       autor: json["autor"],
-      mensaje: json["mensaje"]
+      mensaje: json["mensaje"],
+      estado: json["estado"]
     );
   }
   List<MensajeModel> listamensajes(json){
@@ -31,7 +34,8 @@ class MensajeModel{
       mensajes.add(MensajeModel(
         autor: variable["autor"],
         fecha: variable["tiempo"],
-        mensaje: variable["mensaje"]
+        mensaje: variable["mensaje"],
+        estado: variable["estado"],
       ));
     }
     return mensajes;
