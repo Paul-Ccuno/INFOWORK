@@ -239,8 +239,8 @@ class ChatRoomScreen extends StatelessWidget {
                       " " +
                       DateFormat.jm().format(hoy)
                 });
-                print("asd");
-              })
+              },
+          )
         ],
       ),
     );
