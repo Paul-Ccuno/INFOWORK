@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:infowork/model/empresa.dart';
 import 'package:infowork/model/trabajador.dart';
 import 'package:infowork/screens/chatroom/components/body.dart';
+import 'package:intl/intl.dart';
 
 import '../../../constans.dart';
 
@@ -152,16 +153,19 @@ class ChatRoomScreen extends StatelessWidget {
             .onValue,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
+            print(snapshot.hasData.toString());
             List<MensajeModel> mensajes = new List();
-            snapshot.data.snapshot.value.forEach(
-              (data) {
-                mensajes.add(new MensajeModel(
-                    autor: data["autor"],
-                    mensaje: data["mensaje"],
-                    fecha: data["tiempo"],
-                    estado: data["status"]));
-              },
-            );
+            if (snapshot.data.snapshot.value != null) {
+              snapshot.data.snapshot.value.forEach(
+                (data) {
+                  mensajes.add(new MensajeModel(
+                      autor: data["autor"],
+                      mensaje: data["mensaje"],
+                      fecha: data["tiempo"],
+                      estado: data["status"]));
+                },
+              );
+            }
             return Column(
               children: <Widget>[
                 Expanded(
@@ -186,7 +190,7 @@ class ChatRoomScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                enviarmensajes(),
+                enviarmensajes(mensajes.length),
               ],
             );
           } else {
@@ -197,7 +201,10 @@ class ChatRoomScreen extends StatelessWidget {
     );
   }
 
-  Widget enviarmensajes() {
+  Widget enviarmensajes(int cantidad) {
+    final myController = TextEditingController();
+    DateTime hoy = DateTime.now();
+    print(DateFormat('EEEE').format(hoy));
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8),
       height: 50,
@@ -209,8 +216,31 @@ class ChatRoomScreen extends StatelessWidget {
             decoration: InputDecoration.collapsed(
               hintText: "Envia un mensaje",
             ),
+            controller: myController,
           )),
-          IconButton(icon: Icon(Icons.send, color: kPrimaryColor,), onPressed: null)
+          IconButton(
+              icon: Icon(
+                Icons.send,
+                color: kPrimaryColor,
+              ),
+              onPressed: () {
+                databaseReference
+                    .child("Empresa")
+                    .child(empresaModel.nombre)
+                    .child("Trabajador")
+                    .child(trabajadorModel.dni)
+                    .child("mensajes")
+                    .child(cantidad.toString())
+                    .set({
+                  "autor": empresaModel.nombre,
+                  "mensaje": myController.text,
+                  "status": false,
+                  "tiempo": DateFormat('EEEE').format(hoy) +
+                      " " +
+                      DateFormat.jm().format(hoy)
+                });
+                print("asd");
+              })
         ],
       ),
     );
