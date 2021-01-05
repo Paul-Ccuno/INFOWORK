@@ -224,8 +224,9 @@ class ChatScreen extends StatelessWidget {
               ),
             );
           } else {
-            print(empresa);
-            return Text("data1");
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           }
           return Text("data");
         },
