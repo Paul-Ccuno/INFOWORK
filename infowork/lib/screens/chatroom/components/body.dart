@@ -194,7 +194,9 @@ class Body extends StatelessWidget {
               ],
             );
           } else {
-            return Text("Asd");
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           }
         },
       ),

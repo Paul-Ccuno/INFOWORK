@@ -474,7 +474,9 @@ class ChatRoomUserScreen extends StatelessWidget {
               ],
             );
           } else {
-            return Text("Asd");
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           }
         },
       ),
