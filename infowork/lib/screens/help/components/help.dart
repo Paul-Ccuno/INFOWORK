@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:infowork/model/empresa.dart';
 import 'package:infowork/screens/menu/components/menu_screen.dart';
+import 'package:infowork/screens/menuempresa/components/menuempresa.dart';
 
 class Slide {
   final String imageUrl;
@@ -17,7 +19,8 @@ class Slide {
 
 class SlideItem extends StatelessWidget {
   final int index;
-  SlideItem(this.index);
+  final slideL;
+  SlideItem(this.index, this.slideL);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,7 @@ class SlideItem extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             image: DecorationImage(
-              image: AssetImage(slideList[index].imageUrl),
+              image: AssetImage(slideL[index].imageUrl),
               fit: BoxFit.cover,
             ),
           ),
@@ -40,7 +43,7 @@ class SlideItem extends StatelessWidget {
           height: 40,
         ),
         Text(
-          slideList[index].title,
+          slideL[index].title,
           style: TextStyle(
             fontSize: 22,
             color: Theme.of(context).primaryColor,
@@ -50,7 +53,7 @@ class SlideItem extends StatelessWidget {
           height: 10,
         ),
         Text(
-          slideList[index].description,
+          slideL[index].description,
           textAlign: TextAlign.center,
         ),
       ],
@@ -115,12 +118,42 @@ final slideList = [
         'En caso de no estar de acuerdo con un descuento o que falte una bonificacion usar esta opcion para hacer llegar tus reclamos a tu empresa.',
   ),
 ];
+final slideList1 = [
+  Slide(
+    imageUrl: 'assets/images/perfil.png',
+    title: 'Opcion Perfil',
+    description: 'Ve tus datos como empresa tales como nombre, direccion, etc.',
+  ),
+  Slide(
+    imageUrl: 'assets/images/salario.png',
+    title: 'Opcion Empleados',
+    description:
+        'Gestiona tus empleados, teniendo en cuenta sus contratos y boletas de pago.',
+  ),
+  Slide(
+    imageUrl: 'assets/images/salud.png',
+    title: 'Opcion Salud',
+    description:
+        'Maneja los criterios de proteccion y salud hacia tus empleados.',
+  ),
+  Slide(
+    imageUrl: 'assets/images/normass.png',
+    title: 'Opcion Normas',
+    description: 'Maneja las normas de tu empresa.',
+  ),
+  Slide(
+    imageUrl: 'assets/images/reclamo.png',
+    title: 'Opcion Reclamo',
+    description: 'Con esta opcion puedes ver los reclamos de tus empleados.',
+  ),
+];
 
 class GettingStartedScreen extends StatefulWidget {
   final String empresa;
   final String usuario;
-
-  GettingStartedScreen({Key key, this.empresa, this.usuario}) : super(key: key);
+  final EmpresaModel empresaModel;
+  GettingStartedScreen({Key key, this.empresa, this.usuario, this.empresaModel})
+      : super(key: key);
   @override
   _GettingStartedScreenState createState() => _GettingStartedScreenState();
 }
@@ -176,8 +209,14 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                       scrollDirection: Axis.horizontal,
                       controller: _pageController,
                       onPageChanged: _onPageChanged,
-                      itemCount: slideList.length,
-                      itemBuilder: (ctx, i) => SlideItem(i),
+                      itemCount: widget.empresaModel == null
+                          ? slideList.length
+                          : slideList1.length,
+                      itemBuilder: (ctx, i) {
+                        return (widget.empresaModel == null
+                            ? SlideItem(i, slideList)
+                            : SlideItem(i, slideList1));
+                      },
                     ),
                     Stack(
                       alignment: AlignmentDirectional.topStart,
@@ -188,7 +227,12 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              for (int i = 0; i < slideList.length; i++)
+                              for (int i = 0;
+                                  i <
+                                      (widget.empresaModel == null
+                                          ? slideList.length
+                                          : slideList1.length);
+                                  i++)
                                 if (i == _currentPage)
                                   SlideDots(true)
                                 else
@@ -213,16 +257,24 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                       Container(
                         child: MaterialButton(
                           onPressed: () {
-                            print(this.widget.empresa);
-                            Navigator.pop(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => MenuScreen(
-                                  empresa: this.widget.empresa,
-                                  usuario: this.widget.usuario,
-                                ),
-                              ),
-                            );
+                            widget.empresaModel == null
+                                ? Navigator.pop(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => MenuScreen(
+                                        empresa: this.widget.empresa,
+                                        usuario: this.widget.usuario,
+                                      ),
+                                    ),
+                                  )
+                                : Navigator.pop(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => MenuEmpresaScreen(
+                                        empresaModel: widget.empresaModel,
+                                      ),
+                                    ),
+                                  );
                           },
                           materialTapTargetSize:
                               MaterialTapTargetSize.shrinkWrap,

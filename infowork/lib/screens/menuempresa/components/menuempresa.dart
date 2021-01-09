@@ -23,7 +23,11 @@ class MenuEmpresaScreen extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => GettingStartedScreen(),
+              builder: (context) => GettingStartedScreen(
+                empresa: "",
+                usuario: "",
+                empresaModel: empresaModel,
+              ),
             ),
           );
         },
