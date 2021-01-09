@@ -28,7 +28,10 @@ class MenuScreen extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => GettingStartedScreen(),
+              builder: (context) => GettingStartedScreen(
+                empresa: this.empresa,
+                usuario: this.usuario,
+              ),
             ),
           );
         },

@@ -117,6 +117,10 @@ final slideList = [
 ];
 
 class GettingStartedScreen extends StatefulWidget {
+  final String empresa;
+  final String usuario;
+
+  GettingStartedScreen({Key key, this.empresa, this.usuario}) : super(key: key);
   @override
   _GettingStartedScreenState createState() => _GettingStartedScreenState();
 }
@@ -209,10 +213,14 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                       Container(
                         child: MaterialButton(
                           onPressed: () {
-                            Navigator.push(
+                            print(this.widget.empresa);
+                            Navigator.pop(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => MenuScreen(),
+                                builder: (context) => MenuScreen(
+                                  empresa: this.widget.empresa,
+                                  usuario: this.widget.usuario,
+                                ),
                               ),
                             );
                           },
