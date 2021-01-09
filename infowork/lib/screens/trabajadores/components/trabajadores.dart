@@ -337,7 +337,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        height: 680,
+                        height: size.height * .80,
                         padding: new EdgeInsets.fromLTRB(10, 30, 10, 10),
                         child: new Column(
                           children: <Widget>[
