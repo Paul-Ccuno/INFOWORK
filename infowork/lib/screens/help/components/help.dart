@@ -120,12 +120,12 @@ final slideList = [
 ];
 final slideList1 = [
   Slide(
-    imageUrl: 'assets/images/perfil.png',
+    imageUrl: 'assets/images/empresahelp.png',
     title: 'Opcion Perfil',
     description: 'Ve tus datos como empresa tales como nombre, direccion, etc.',
   ),
   Slide(
-    imageUrl: 'assets/images/salario.png',
+    imageUrl: 'assets/images/employeehel.png',
     title: 'Opcion Empleados',
     description:
         'Gestiona tus empleados, teniendo en cuenta sus contratos y boletas de pago.',

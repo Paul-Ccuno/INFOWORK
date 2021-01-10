@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infowork/model/empresa.dart';
+import 'package:infowork/screens/Chat/Components/chat.dart';
 import 'package:infowork/screens/empresa_perfil/components/empresa_perfil.dart';
+import 'package:infowork/screens/normas_empresa/components/normas_empresa.dart';
 import 'package:infowork/screens/saludempresa/components/salud_empresa.dart';
+import 'package:infowork/screens/trabajadores/components/trabajadores.dart';
 import 'package:infowork/screens/usuario_empresa/components/usuario_empresa.dart';
 
 class MainDrawEmpresa extends StatelessWidget {
@@ -54,7 +57,16 @@ class MainDrawEmpresa extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.emoji_people),
           title: Text("Empleados"),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TrabajadoresEmpresaScreen(
+                  empresaModel: this.empresaModel,
+                ),
+              ),
+            );
+          },
         ),
         ListTile(
           leading: Icon(Icons.local_hospital_rounded),
@@ -73,11 +85,30 @@ class MainDrawEmpresa extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.content_paste),
           title: Text("Normas"),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NormaEmpresaScreen(
+                  empresaModel: this.empresaModel,
+                ),
+              ),
+            );
+          },
         ),
         ListTile(
           leading: Icon(Icons.chat),
           title: Text("Reclamo"),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ChatScreen(
+                  empresa: this.empresaModel,
+                ),
+              ),
+            );
+          },
         ),
         ListTile(
           leading: Icon(Icons.arrow_back),
