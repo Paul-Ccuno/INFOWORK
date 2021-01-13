@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:infowork/model/empresa.dart';
@@ -9,6 +11,7 @@ import '../../../constans.dart';
 
 class ChatRoomScreen extends StatelessWidget {
   final EmpresaModel empresaModel;
+  ScrollController _scrollController = new ScrollController();
   final TrabajadorModel trabajadorModel;
   final databaseReference = FirebaseDatabase.instance.reference();
 
@@ -181,6 +184,8 @@ class ChatRoomScreen extends StatelessWidget {
                         ),
                       ),
                       ListView.builder(
+                        controller: _scrollController,
+                        shrinkWrap: true,
                         itemCount: mensajes.length,
                         itemBuilder: (BuildContext context, int index) {
                           final MensajeModel mensajeuser = mensajes[index];
@@ -190,7 +195,7 @@ class ChatRoomScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                enviarmensajes(mensajes.length),
+                enviarmensajes(mensajes.length, context),
               ],
             );
           } else {
@@ -203,7 +208,7 @@ class ChatRoomScreen extends StatelessWidget {
     );
   }
 
-  Widget enviarmensajes(int cantidad) {
+  Widget enviarmensajes(int cantidad, context) {
     final myController = TextEditingController();
     DateTime hoy = DateTime.now();
     print(DateFormat('EEEE').format(hoy));
@@ -221,27 +226,32 @@ class ChatRoomScreen extends StatelessWidget {
             controller: myController,
           )),
           IconButton(
-              icon: Icon(
-                Icons.send,
-                color: kPrimaryColor,
-              ),
-              onPressed: () {
-                databaseReference
-                    .child("Empresa")
-                    .child(empresaModel.nombre)
-                    .child("Trabajador")
-                    .child(trabajadorModel.dni)
-                    .child("mensajes")
-                    .child(cantidad.toString())
-                    .set({
-                  "autor": empresaModel.nombre,
-                  "mensaje": myController.text,
-                  "status": false,
-                  "tiempo": DateFormat('EEEE').format(hoy) +
-                      " " +
-                      DateFormat.jm().format(hoy)
-                });
-              },
+            icon: Icon(
+              Icons.send,
+              color: kPrimaryColor,
+            ),
+            onPressed: () {
+              databaseReference
+                  .child("Empresa")
+                  .child(empresaModel.nombre)
+                  .child("Trabajador")
+                  .child(trabajadorModel.dni)
+                  .child("mensajes")
+                  .child(cantidad.toString())
+                  .set({
+                "autor": empresaModel.nombre,
+                "mensaje": myController.text,
+                "status": false,
+                "tiempo": DateFormat('EEEE').format(hoy) +
+                    " " +
+                    DateFormat.jm().format(hoy)
+              });
+              _scrollController.animateTo(
+                MediaQuery.of(context).size.width * cantidad,
+                curve: Curves.easeOut,
+                duration: const Duration(milliseconds: 300),
+              );
+            },
           )
         ],
       ),
