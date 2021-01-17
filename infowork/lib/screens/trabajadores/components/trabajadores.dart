@@ -58,6 +58,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                   controller: _dniTrabajador,
                   decoration: InputDecoration(
                     icon: Icon(Icons.perm_identity),
+                    hintText: "DNI",
                   ),
                   autovalidateMode: AutovalidateMode.always,
                 ),
@@ -65,6 +66,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                   controller: _nombreTrabajador,
                   decoration: InputDecoration(
                     icon: Icon(Icons.perm_identity),
+                    hintText: "nombre",
                   ),
                   autovalidateMode: AutovalidateMode.always,
                 ),
@@ -72,6 +74,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                   controller: _apellidoTrabajador,
                   decoration: InputDecoration(
                     icon: Icon(Icons.perm_identity),
+                    hintText: "apellido",
                   ),
                   autovalidateMode: AutovalidateMode.always,
                 ),
@@ -79,6 +82,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                   controller: _passwordTrabajador,
                   decoration: InputDecoration(
                     icon: Icon(Icons.lock),
+                    hintText: "contraseña",
                   ),
                   autovalidateMode: AutovalidateMode.always,
                 ),
@@ -86,6 +90,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                   controller: _edadTrabajador,
                   decoration: InputDecoration(
                     icon: Icon(Icons.date_range),
+                    hintText: "edad",
                   ),
                   autovalidateMode: AutovalidateMode.always,
                 ),
@@ -198,6 +203,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                     controller: _dniTrabajador,
                     decoration: InputDecoration(
                       icon: Icon(Icons.perm_identity),
+                      hintText: "DNI",
                     ),
                     autovalidateMode: AutovalidateMode.always,
                   ),
@@ -205,6 +211,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                     controller: _nombreTrabajador,
                     decoration: InputDecoration(
                       icon: Icon(Icons.perm_identity),
+                      hintText: "nombre",
                     ),
                     autovalidateMode: AutovalidateMode.always,
                   ),
@@ -212,6 +219,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                     controller: _apellidoTrabajador,
                     decoration: InputDecoration(
                       icon: Icon(Icons.perm_identity),
+                      hintText: "apellido",
                     ),
                     autovalidateMode: AutovalidateMode.always,
                   ),
@@ -219,6 +227,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                     controller: _passwordTrabajador,
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock),
+                      hintText: "contraseña",
                     ),
                     autovalidateMode: AutovalidateMode.always,
                   ),
@@ -226,6 +235,7 @@ class TrabajadoresEmpresaScreen extends StatelessWidget {
                     controller: _edadTrabajador,
                     decoration: InputDecoration(
                       icon: Icon(Icons.date_range),
+                      hintText: "edad",
                     ),
                     autovalidateMode: AutovalidateMode.always,
                   ),
